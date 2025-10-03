@@ -16,9 +16,6 @@ All instructions are ALU-type (R-format) and are implemented in the RTL, documen
 - `docs/TESTPLAN.md`  
   Test vectors, expected results, and edge cases for each of the 10 new instructions.
 
-- `tests/rvx10.S`  
-  Self-checking assembly test program (uses `.word` to embed custom instruction encodings).
-
 - `tests/rvx10.hex`  
   Memory image generated from the assembly program. Loadable with `$readmemh` in your Verilog testbench.
 
@@ -86,4 +83,5 @@ If you modify `tests/rvx10.S`, regenerate `rvx10.hex`:
 - **ABS(INT_MIN):** Must return `0x80000000` (wrap-around, no trap).
 - **Writes to x0:** Must be ignored.
 - The final success indicator is `sw x29, 100(x0)` with `x29 = 25`.
+
 
